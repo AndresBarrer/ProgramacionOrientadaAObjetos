@@ -44,7 +44,7 @@ public class Automovil {
         this.tam = tam;
     }
 
-    public int getyearDeCreacion(){
+    public int getYearDeCreacion(){
         return yearDeCreacion;
     }
     public void setYearDeCreacion(int yearDeCreacion){
