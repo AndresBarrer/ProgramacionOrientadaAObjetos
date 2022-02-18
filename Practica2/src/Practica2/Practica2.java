@@ -80,11 +80,6 @@ public class Practica2 {
                                 computadoras.get(i).setFuenteDePoder(inHDD.nextInt());
                                 
                             }
-                            inCpu.close();
-                            inGpu.close();
-                            inRam.close();
-                            inFuenteDePoder.close();
-                            inHDD.close();
 
                             break;
         
@@ -110,6 +105,7 @@ public class Practica2 {
                     inRam.close();
                     inFuenteDePoder.close();
                     inHDD.close();
+
                     break;
 
                 case 2:
@@ -129,20 +125,20 @@ public class Practica2 {
 
                             //Capturar Atributos
                             for (int i=0; i<3; i++){
-                            System.out.printf("Introducir color:");
-                            audifonos.get(i).setColor(inColorAud.next());
-        
-                            System.out.printf("Introducir modelo:");
-                            audifonos.get(i).setModelo(inModeloAud.next());
-        
-                            System.out.printf("Introducir tamaño:");
-                            audifonos.get(i).setTam(inTamAud.next());
-        
-                            System.out.printf("Introducir portabilidad:");
-                            audifonos.get(i).setPortabilidad(inPortabilidadAud.next());
-        
-                            System.out.printf("Introducir Tipo de Entrada:");
-                            audifonos.get(i).setTipoDeEntrada(inTipoDeEntradaAud.next());
+                                System.out.printf("Introducir color:");
+                                audifonos.get(i).setColor(inColorAud.next());
+            
+                                System.out.printf("Introducir modelo:");
+                                audifonos.get(i).setModelo(inModeloAud.next());
+            
+                                System.out.printf("Introducir tamaño:");
+                                audifonos.get(i).setTam(inTamAud.next());
+            
+                                System.out.printf("Introducir portabilidad:");
+                                audifonos.get(i).setPortabilidad(inPortabilidadAud.next());
+            
+                                System.out.printf("Introducir Tipo de Entrada:");
+                                audifonos.get(i).setTipoDeEntrada(inTipoDeEntradaAud.next());
                             }
 
                             break;
@@ -188,6 +184,7 @@ public class Practica2 {
 
                             //Capturar Atributos
                             for(int i=0; i<3; i++){
+
                                 System.out.println("Introducir Modelo:");
                                 bicicletas.get(i).setModelo(inModeloBic.next());
             
@@ -379,9 +376,5 @@ public class Practica2 {
         System.out.printf("\n1) Capturar atributos");
         System.out.printf("\n2) Imprimir Objetos");
         System.out.printf("\nIntroducir numero: ");
-    }
-
-
-    
-    
+    }   
 }
