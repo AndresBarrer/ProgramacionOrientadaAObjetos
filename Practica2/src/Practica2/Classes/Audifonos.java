@@ -2,12 +2,14 @@ package Practica2.Classes;
 
 public class Audifonos {
 
+    
     private String color; 
     private String modelo;
     private String tam;
     private String portabilidad;
     private String tipoDeEntrada;
 
+    //si el objeto es creado sin valores, se guardan de esta manera
     public Audifonos(){
         this.color = "";
         this.modelo = "";
@@ -16,6 +18,7 @@ public class Audifonos {
         this.tipoDeEntrada = "";
     }
 
+    //si el objeto es creado con valores, se les asigna del argumento
     public Audifonos(String color, String modelo, String tam, String portabilidad, String tipoDeEntrada){
         this.color = color;
         this.modelo = modelo;
@@ -24,6 +27,10 @@ public class Audifonos {
         this.tipoDeEntrada = tipoDeEntrada;
     }
 
+    /*
+    getXxxxx = devolver el valor
+    setXxxxx = establecer valores
+    */
     public String getColor(){
         return color;
     }

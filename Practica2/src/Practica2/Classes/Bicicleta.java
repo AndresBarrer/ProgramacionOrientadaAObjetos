@@ -3,19 +3,21 @@ package Practica2.Classes;
 public class Bicicleta {
     private String modelo; 
     private String color;
-    private String tamDeLlantas;
+    private int tamDeLlantas;
     private String tipo;
     private String material;
 
+    //si el objeto es creado sin valores, se guardan de esta manera
     public Bicicleta(){
         this.modelo = "";
         this.color = "";
-        this.tamDeLlantas = "";
+        this.tamDeLlantas = 0;
         this.tipo = "";
         this.material = "";
     }
 
-    public Bicicleta(String modelo, String color, String tamDeLlantas, String tipo, String material){
+    //si el objeto es creado con valores, se les asigna del argumento
+    public Bicicleta(String modelo, String color, int tamDeLlantas, String tipo, String material){
         this.modelo = modelo;
         this.color = color;
         this.tamDeLlantas = tamDeLlantas;
@@ -23,6 +25,10 @@ public class Bicicleta {
         this.material = material;
     }
 
+    /*
+    getXxxxx = devolver el valor
+    setXxxxx = establecer valores
+    */
     public String getModelo(){
         return modelo;
     }
@@ -37,10 +43,10 @@ public class Bicicleta {
         this.color = color;
     }
 
-    public String getTamDeLlantas(){
+    public int getTamDeLlantas(){
         return tamDeLlantas;
     }
-    public void setTamDeLlantas(String tamDeLlantas){
+    public void setTamDeLlantas(int tamDeLlantas){
         this.tamDeLlantas = tamDeLlantas;
     }
 

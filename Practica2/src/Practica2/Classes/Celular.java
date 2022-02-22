@@ -7,6 +7,7 @@ public class Celular {
     private int almacenamiento;
     private String resolucionCamara;
 
+    //si el objeto es creado sin valores, se guardan de esta manera
     public Celular(){
         this.modelo = "";
         this.color = "";
@@ -15,6 +16,7 @@ public class Celular {
         this.resolucionCamara = "";
     }
 
+    //si el objeto es creado con valores, se les asigna del argumento
     public Celular(String modelo, String color, String tam, int almacenamiento, String resolucionCamara){
         this.modelo = modelo;
         this.color = color;
@@ -22,6 +24,11 @@ public class Celular {
         this.almacenamiento = almacenamiento;
         this.resolucionCamara = resolucionCamara;
     }
+
+    /*
+    getXxxxx = devolver el valor
+    setXxxxx = establecer valores
+    */
 
     public String getModelo(){
         return modelo;

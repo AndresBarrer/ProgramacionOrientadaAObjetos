@@ -7,6 +7,7 @@ public class Automovil {
     private int yearDeCreacion;
     private int numeroDePuertas;
 
+    //si el objeto es creado sin valores, se guardan de esta manera
     public Automovil(){
         this.modelo = "";
         this.color = "";
@@ -15,6 +16,7 @@ public class Automovil {
         this.numeroDePuertas = 0;
     }
 
+    //si el objeto es creado con valores, se les asigna del argumento
     public Automovil(String modelo, String color, String tam, int yearDeCreacion, int numeroDePuertas){
         this.modelo = modelo;
         this.color = color;
@@ -23,6 +25,10 @@ public class Automovil {
         this.numeroDePuertas = numeroDePuertas;
     }
 
+    /*
+    getXxxxx = devolver el valor
+    setXxxxx = establecer valores
+    */
     public String getModelo(){
         return modelo;
     }

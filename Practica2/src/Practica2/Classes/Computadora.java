@@ -7,6 +7,7 @@ public class Computadora {
     private int fuenteDePoder;
     private int hdd;
 
+    //si el objeto es creado sin valores, se guardan de esta manera
     public Computadora(){
         this.cpu = "";
         this.gpu = "";
@@ -15,6 +16,7 @@ public class Computadora {
         this.hdd = 0;
     }
 
+    //si el objeto es creado con valores, se les asigna del argumento
     public Computadora(String cpu, String gpu, int ram, int fuenteDePoder, int hdd){
         this.cpu = cpu;
         this.gpu = gpu;
@@ -22,6 +24,11 @@ public class Computadora {
         this.fuenteDePoder = fuenteDePoder;
         this.hdd = hdd;
     }
+
+    /*
+    getXxxxx = devolver el valor
+    setXxxxx = establecer valores
+    */
 
     public String getCpu(){
         return cpu;
