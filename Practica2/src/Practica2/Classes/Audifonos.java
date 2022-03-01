@@ -2,7 +2,6 @@ package Practica2.Classes;
 
 public class Audifonos {
 
-    
     private String color; 
     private String modelo;
     private String tam;
