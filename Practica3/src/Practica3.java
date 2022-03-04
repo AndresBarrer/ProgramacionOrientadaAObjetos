@@ -12,7 +12,6 @@ public class Practica3 {
         ArrayList<Estudiante> estudiantes = new ArrayList<Estudiante>();
 
         //Crear 10 objetos estudiante:
-        
         //5 objetos serán creados con datos fijos que el programador defina.
         //5 objetos que reciban como parámetros los valores e implementa el método
         //AsignarNombre. (El usuario introduce los datos)
