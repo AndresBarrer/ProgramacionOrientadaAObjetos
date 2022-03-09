@@ -27,9 +27,18 @@ public class Main {
         mex.setFechaMes(scan.nextLine());
         System.out.println("Introducir year(ej: 2001):");
         mex.setFechaYear(scan.nextLine());
+        
+        System.out.println("\n\nIntroducir genero (H o M): ");
+        mex.setGenero(scan.nextLine());
 
+        System.out.println("Introducir entidad de nacimiento:");
+        mex.setEntidad(scan.nextLine());
 
-        mex.makeCURP(mex.getNombre(), mex.getPrimerApellido(), mex.getSegundoApellido());
+        //String apellido1, String apellido2, String nombre, String year, 
+        //String mes, String dia, String genero, String entidad
+        mex.makeCURP(mex.getPrimerApellido(), mex.getSegundoApellido(), mex.getNombre(), 
+                    mex.getFechaYear(), mex.getFechaMes(),mex.getFechaDia(), mex.getGenero(),
+                    mex.getEntidad());
         scan.close();
     }
 }
