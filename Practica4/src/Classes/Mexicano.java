@@ -1,25 +1,58 @@
 package Classes;
 import java.util.Scanner;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Random;
-
-
 
 public class Mexicano{
     //informacion sobre nombre
     String nombre, apellido1, apellido2;
     String CURP, RFC;
 
-    //informacion sobre fecha de nacimiento
-    String year, mes, dia;
+    //informacion sobre fecha de registro y fecha de nacimiento
+    String yearCURP, mesCURP, diaCURP;
+    String yearRFC, mesRFC, diaRFC;
 
     //genero, entidad
-    String genero, entidad;
+    String genero, entidad, nacionalidad;
     
-    boolean checkIsKeyPresent;
+    boolean checkIsKeyPresent, residencia;
     
     Scanner scan = new Scanner(System.in);
     
+    public Mexicano(){
+        this.nombre="";
+        this.apellido1="";
+        this.apellido2="";
+        this.yearCURP="";
+        this.mesCURP="";
+        this.diaCURP= "";
+        this.yearRFC="";
+        this.mesRFC="";
+        this.diaRFC= "";
+        this.genero = "";
+        this.entidad = "";
+    }
+
+    public Mexicano(String nombre, String apellido1, String apellido2, String yearCurp, 
+                    String mesCurp,String diaCurp, String yearRFC, String mesRFC, 
+                    String diaRFC, String genero, String entidad, String nacionalidad, boolean residencia){
+        this.nombre= nombre.toUpperCase();
+        this.apellido1= apellido1.toUpperCase();
+        this.apellido2= apellido2.toUpperCase();
+        this.yearCURP= yearCurp;
+        this.mesCURP= mesCurp;
+        this.diaCURP= diaCurp;
+        this.yearRFC= yearRFC;
+        this.mesRFC= mesRFC;
+        this.diaRFC= diaRFC;
+        this.genero = genero.toUpperCase();
+        setEntidad(entidad.toUpperCase());
+        this.nacionalidad = nacionalidad.toUpperCase();
+        this.residencia = residencia;
+    }
+
     //entidad
     //Map<String, String> entidades = new HashMap<>();
     HashMap<String, String> entidades = new HashMap<String, String>(){{
@@ -79,28 +112,50 @@ public class Mexicano{
         this.apellido2 = apellido.toUpperCase();
     }
 
-    public String getFechaDia(){
-        return this.dia;
+    public String getFechaDiaCURP(){
+        return this.diaCURP;
     }
-    public void setFechaDia(String dia){
-        this.dia = dia;
-    }
-
-    public String getFechaMes(){
-        return this.mes;
-    }
-    public void setFechaMes(String mes){
-        this.mes = mes;
+    public void setFechaDiaCURP(String diaCURP){
+        this.diaCURP = diaCURP;
     }
 
-    public String getFechaYear(){
-        return this.year;
+    public String getFechaMesCURP(){
+        return this.mesCURP;
     }
-    public void setFechaYear(String year){
-        this.year = year.substring(2,4);
+    public void setFechaMesCURP(String mesCURP){
+        this.mesCURP = mesCURP;
     }
 
-    public char getPrimerVocal(){
+    public String getFechaYearCURP(){
+        return this.yearCURP.substring(2,4);
+    }
+    public void setFechaYearCURP(String yearCURP){
+        this.yearCURP = yearCURP;
+    }
+
+
+    public String getFechaDiaRFC(){
+        return this.diaRFC;
+    }
+    public void setFechaDiaRFC(String diaRFC){
+        this.diaRFC = diaRFC;
+    }
+
+    public String getFechaMesRFC(){
+        return this.mesRFC;
+    }
+    public void setFechaMesRFC(String mesRFC){
+        this.mesRFC = mesRFC;
+    }
+
+    public String getFechaYearRFC(){
+        return this.yearRFC.substring(2,4);
+    }
+    public void setFechaYearRFC(String yearRFC){
+        this.yearRFC = yearRFC;
+    }
+
+    public char getPrimerVocalApellido1(){
         for(int i=0; i<this.apellido1.length(); i++) {
             if(this.apellido1.charAt(i) == 'A'|| this.apellido1.charAt(i) == 'E'|| 
                 this.apellido1.charAt(i) == 'I' || this.apellido1.charAt(i) == 'O' || 
@@ -111,7 +166,6 @@ public class Mexicano{
         }
         return 0;
     }
-
     
     public String getGenero(){
         return this.genero;
@@ -145,6 +199,13 @@ public class Mexicano{
         }
     }
 
+    //entidad de nacimiento 
+    public String getNacionalidad(){
+        return this.nacionalidad.toUpperCase();
+    }
+    public void setNacionalidad(String nacionalidad){
+        this.nacionalidad = nacionalidad;
+    }
     public boolean isKeyPresent(String entidad){
         checkIsKeyPresent = entidades.containsKey(entidad.toUpperCase());
         return checkIsKeyPresent;
@@ -156,7 +217,6 @@ public class Mexicano{
             if(this.apellido1.charAt(i) != 'A' && this.apellido1.charAt(i) !='E'&& 
                 this.apellido1.charAt(i) != 'I' && this.apellido1.charAt(i) != 'O' && 
                 this.apellido1.charAt(i) != 'U') {
-                    System.out.println(this.apellido1.charAt(i) != 'A');
                     return this.apellido1.charAt(i);
             }
         }
@@ -169,7 +229,6 @@ public class Mexicano{
             if(this.apellido2.charAt(i) != 'A' && this.apellido2.charAt(i) !='E'&& 
                 this.apellido2.charAt(i) != 'I' && this.apellido2.charAt(i) != 'O' && 
                 this.apellido2.charAt(i) != 'U') {
-                    System.out.println(this.apellido2.charAt(i) != 'A');
                     return this.apellido2.charAt(i);
             }
         }
@@ -182,7 +241,6 @@ public class Mexicano{
             if(this.nombre.charAt(i) != 'A' && this.nombre.charAt(i) !='E'&& 
                 this.nombre.charAt(i) != 'I' && this.nombre.charAt(i) != 'O' && 
                 this.nombre.charAt(i) != 'U') {
-                    System.out.println(this.nombre.charAt(i) != 'A');
                     return this.nombre.charAt(i);
             }
         }
@@ -192,15 +250,44 @@ public class Mexicano{
     //homoclave
     //String nombre, String apellido1, String apellido2
     Random Random = new Random();
-    char randomizedChar1 = (char) (Random.nextInt(43) + '0');
-    char randomizedChar2 = (char) (Random.nextInt(43) + '0');
-    public void makeCURP(String apellido1, String apellido2, String nombre, String year, String mes, String dia, String genero, String entidad){
-        System.out.printf("\nCURP: " + this.apellido1.charAt(0) + 
-                            this.getPrimerVocal() + this.apellido2.charAt(0) + 
-                            this.nombre.charAt(0) + this.year + this.mes + this.dia +
-                            this.genero + this.entidad + this.getConsonantePrimerApellido() + 
-                            this.getConsonanteSegundoApellido() + this.getConsonantePrimerNombre() +
-                            randomizedChar1 + randomizedChar2);
+    char randomizedChar1 = (char) (Random.nextInt(26) + 'A');
+    char randomizedChar2 = (char) (Random.nextInt(26) + 'A');
+    char randomizedChar3 = (char) (Random.nextInt(26) + 'A');
+    Calendar currentTimeNow = Calendar.getInstance();
+    
+
+    //String apellido1, String apellido2, String nombre, String yearCURP, String mesCURP, String diaCURP, String genero, String entidad
+    public void makeCURP(){
+        if(this.getNacionalidad().equalsIgnoreCase("MEXICANA")){
+        System.out.printf("CURP: " + this.getPrimerApellido().charAt(0) + this.getPrimerVocalApellido1() + 
+                                        this.getSegundoApellido().charAt(0) + this.getNombre().charAt(0) +
+                                        this.getFechaYearCURP() + this.getFechaMesCURP() + this.getFechaDiaCURP() + 
+                                        this.getGenero() + this.getEntidad() + this.getConsonantePrimerApellido() + 
+                                        this.getConsonanteSegundoApellido() + this.getConsonantePrimerNombre() +
+                                        randomizedChar1 + randomizedChar2 + "\n");
+        }else{
+            if(residencia == true){
+                currentTimeNow.add(Calendar.HOUR, 4320);
+                //asignar curp temporal por un periodo maximo de 180 dias naturales
+                // y se asignara como estado el lugar donde se realizo el tramite
+                Date nuevoTime = currentTimeNow.getTime();
+                System.out.println("Curp temporal, se vence:" + nuevoTime);
+                System.out.printf(this.getPrimerApellido().charAt(0) + this.getPrimerVocalApellido1() + 
+                                this.getSegundoApellido().charAt(0) + this.getNombre().charAt(0) +
+                                this.getFechaYearCURP() + this.getFechaMesCURP() + this.getFechaDiaCURP() + 
+                                this.getGenero() + this.getEntidad() + this.getConsonantePrimerApellido() + 
+                                this.getConsonanteSegundoApellido() + this.getConsonantePrimerNombre() +
+                                randomizedChar1 + randomizedChar2 + "\n");
+            }else{
+                System.out.println("ERROR. NO SE PUDO GENERAR EL CURP.");
+            }
+        }
+    }
+
+    public void makeRFC(){
+        System.out.printf("RFC: " + this.getPrimerApellido().charAt(0) + this.getPrimerVocalApellido1() + 
+                                    this.getSegundoApellido().charAt(0) + this.getNombre().charAt(0) + 
+                                    this.getFechaYearRFC() + this.getFechaMesRFC() + this.getFechaDiaRFC() + 
+                                    randomizedChar3 + randomizedChar2 + randomizedChar1 + "\n");
     }
 }
-    

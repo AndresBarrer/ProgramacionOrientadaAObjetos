@@ -1,44 +1,29 @@
-import java.util.Scanner;
+import java.util.ArrayList;
 import Classes.Mexicano;
- 
 
 public class Main {
     public static void main(String[] args) {
         
-        //crear objecto mex para poder manipular informacion
-        Mexicano mex = new Mexicano();
-
-        //scanner para tomar input del usuario
-        Scanner scan = new Scanner(System.in);
+        //crear objeto para poder manipular informacion
+        ArrayList<Mexicano> mexicanos = new ArrayList<Mexicano>();
+        mexicanos.add(new Mexicano("Andres", "Barrera", "Rodriguez", "2001", 
+                    "12", "20", "2001", "12", "20", "H", "Baja California", "Mexicana", true));
         
-        System.out.println("Introducir nombre:");
-        mex.setNombre(scan.nextLine());
-
-        System.out.println("Introducir primer apellido:");
-        mex.setPrimerApellido(scan.nextLine());
+        mexicanos.add(new Mexicano("Estefania", "Barrera", "Rodriguez", "2001", 
+                    "12", "20", "2001", "12", "20", "M", "Baja California", "Extranjera", true));
         
-        System.out.println("Introducir segundo apellido:");
-        mex.setSegundoApellido(scan.nextLine());
-        
-        System.out.println("\n\nIntroducir fecha de nacimiento.");
-        System.out.println("Introducir dia:");
-        mex.setFechaDia(scan.nextLine());
-        System.out.println("Introducir mes:");
-        mex.setFechaMes(scan.nextLine());
-        System.out.println("Introducir year(ej: 2001):");
-        mex.setFechaYear(scan.nextLine());
-        
-        System.out.println("\n\nIntroducir genero (H o M): ");
-        mex.setGenero(scan.nextLine());
+        mexicanos.add(new Mexicano("Isabella", "Hope", "Real", "2002", 
+                    "01", "16", "2002", "01", "16", "M", "Baja California Sur", "Extranjera", false));
 
-        System.out.println("Introducir entidad de nacimiento:");
-        mex.setEntidad(scan.nextLine());
+        System.out.println("\nPersona 1: ");
+        mexicanos.get(0).makeCURP();
 
-        //String apellido1, String apellido2, String nombre, String year, 
-        //String mes, String dia, String genero, String entidad
-        mex.makeCURP(mex.getPrimerApellido(), mex.getSegundoApellido(), mex.getNombre(), 
-                    mex.getFechaYear(), mex.getFechaMes(),mex.getFechaDia(), mex.getGenero(),
-                    mex.getEntidad());
-        scan.close();
+        System.out.println("\nPersona 2: ");
+        mexicanos.get(1).makeRFC();
+
+        System.out.println("\nPersona 3: ");
+        mexicanos.get(2).makeCURP();
+        mexicanos.get(2).makeRFC();
     }
 }
+
