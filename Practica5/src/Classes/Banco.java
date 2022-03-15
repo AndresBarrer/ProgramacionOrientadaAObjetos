@@ -1,26 +1,34 @@
 package Classes;
-import java.util.Scanner;
+import java.util.Random;
+//import java.util.Scanner;
 
 /*Crea una clase Banco que permita registrar nuevas cuentas.*/
-public class Banco{
+public class Banco extends Cuenta{
 
+    //THIS IS WHERE THE PROBLEM IS D:
     Cuenta cuenta = new Cuenta();
-    Scanner scan =new Scanner(System.in);
+    //Banco banco = new Banco();
+
+    //Scanner scan = new Scanner(System.in);
 
     //String nombre, String direccion, float saldo
-    public long registrarCuenta(){
-        System.out.println("Introducir nombre: ");
-        cuenta.setNombreCliente(scan.nextLine());
-        cuenta.setDireccion(scan.nextLine());
-        cuenta.setSaldo(scan.nextFloat());
-        return 1; //MUST RETURN ACCOUNT NUMBER, GENERATE ACCOUNT NUMBER USING RANDOM
+    public Cuenta registrarCuenta(String nombre, String direccion, float saldo, int nip){
+
+        this.cuenta.setNombreCliente(nombre);
+        this.cuenta.setDireccion(direccion);
+        this.cuenta.setSaldo(saldo);
+        this.cuenta.setNip(nip);
+        
+        //generar numero de cuenta
+        Random r = new Random( System.currentTimeMillis());
+        this.cuenta.setNumeroCuenta(10000 + r.nextInt(20000));
+        return this.cuenta;
     }
 
-    
-    public float AccederSaldo(int nip, long numeroCuenta, int fechaVencimiento){
+    //might need to use an operator to compare
+    public float AccederSaldo(int nip, int numeroCuenta){
         if((cuenta.getNip() == nip) && 
-            (cuenta.getNumeroCuenta() == numeroCuenta) && 
-            (cuenta.getFechaVencimiento() == fechaVencimiento)){
+            (cuenta.getNumeroCuenta() == numeroCuenta)){
                 return cuenta.getSaldo();
         }else{
             return 0;

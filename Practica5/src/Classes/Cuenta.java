@@ -4,14 +4,14 @@ Crea una clase Cuenta, que tendrá diferentes atributos que, por la naturaleza
 de esta información deberán permanecer todos privados y solo ser accesibles para la clase Banco.
 */
 
-public class Cuenta extends Banco{
+public class Cuenta{
     private int nip;
-    private int fechaVencimiento;
-    private long numeroCuenta;
+    private int numeroCuenta;
     private float saldo;
     private String nombreCliente;
     private String direccion;
 
+    //getters y setters para cada tipo de informacion respectivo
     public int getNip(){
         return this.nip;
     }
@@ -19,17 +19,10 @@ public class Cuenta extends Banco{
         this.nip = nip;
     }
 
-    public int getFechaVencimiento(){
-        return this.fechaVencimiento;
-    }
-    public void setFechaVencimiento(int fechaVencimiento){
-        this.fechaVencimiento = fechaVencimiento;
-    }
-
-    public long getNumeroCuenta(){
+    public int getNumeroCuenta(){
         return this.numeroCuenta;
     }
-    public void setNumeroCuenta(long numeroCuenta){
+    public void setNumeroCuenta(int numeroCuenta){
         this.numeroCuenta = numeroCuenta;
     }
 
