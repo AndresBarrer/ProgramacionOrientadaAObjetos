@@ -1,19 +1,20 @@
 public class Bird {
     //caracteristicas comunes entre birds
-    String name, tam, color, velocidad;
-    int impulso;
+    private String nombre, tam, color, velocidad, AbilidadEspecial;
+    private int impulso;
 
 
     public Bird(){
-        this.name = "";
+        this.nombre = "";
         this.tam = "";
         this.color = "";
         this.velocidad = "";
         this.impulso = 0;    
+        this.AbilidadEspecial = "";
     }
 
-    public Bird(String name, String tam, String color, String velocidad, int impulso){
-        this.name = name;
+    public Bird(String nombre, String tam, String color, String velocidad, int impulso){
+        this.nombre = nombre;
         this.tam = tam;
         this.color = color;
         this.velocidad = velocidad;
@@ -23,6 +24,13 @@ public class Bird {
     /*
     getters y setters de cada atributo en comun
     */
+    public String getNombre(){
+        return this.nombre;
+    }
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+
     public String getTam(){
         return this.tam;
     }
@@ -50,5 +58,15 @@ public class Bird {
     public void setImpulso(int impulso){
         this.impulso = impulso;
     }
-    
+
+    public String getAbilidadEspecial(){
+        return this.AbilidadEspecial;
+    }
+    public void setAbilidadEspecial(String AbilidadEspecial){
+        this.AbilidadEspecial = AbilidadEspecial;
+    }
+
+    public static String Atacar(Bird[] birds, int indice){
+        return "El pajaro " + birds[indice].getNombre() + " ataco y " + birds[indice].getAbilidadEspecial() +"\n";
+    }
 }
