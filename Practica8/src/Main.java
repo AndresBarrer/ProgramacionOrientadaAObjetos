@@ -1,3 +1,7 @@
+import Equipo2;
+import Jugador;
+import Torneo;
+
 public class Main {
     public static void main(String[] args){
 
@@ -48,9 +52,5 @@ public class Main {
         torneo.agregarEquipo(Equipo2);
         torneo.agregarEquipo(Equipo3);
         torneo.agregarEquipo(Equipo4);
-
-
-
-        //make bank of names, 
     }
 }

@@ -16,6 +16,6 @@ public class Torneo {
     }
 
     public void agregarEquipo(equipo){
-        this.equiposParticipante.
+        this.equiposParticipante.add(equipo)
     }
 }
