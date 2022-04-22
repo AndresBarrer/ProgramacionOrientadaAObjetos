@@ -4,42 +4,18 @@ public class Torneo {
     int numeroDeEquipos;
     int partidosJugados;
     int partidosPendientes;
+    List<String> equiposParticipantes = new ArrayList<>();
 
-    /*getters y setters*/
 
-    public String getNombre() {
-        return nombre;
-    }
-    public void setNombre(String nombre) {
+    public Torneo(nombre, region){
         this.nombre = nombre;
-    }
-
-    public String getRegion() {
-        return region;
-    }
-    public void setRegion(String region) {
         this.region = region;
+        this.equiposParticipantes = jugadores;         
+        this.partidosJugados = 0;
+        this.partidosPendientes = 0;
     }
 
-    public int getNumeroDeEquipos() {
-        return numeroDeEquipos;
+    public void agregarEquipo(equipo){
+        this.equiposParticipante.
     }
-    public void setNumeroDeEquipos(int numeroDeEquipos) {
-        this.numeroDeEquipos = numeroDeEquipos;
-    }
-
-    public int getPartidosJugados() {
-        return partidosJugados;
-    }
-    public void setPartidosJugados(int partidosJugados) {
-        this.partidosJugados = partidosJugados;
-    }
-
-    public int getPartidosPendientes() {
-        return partidosPendientes;
-    }
-    public void setPartidosPendientes(int partidosPendientes) {
-        this.partidosPendientes = partidosPendientes;
-    }
-    
 }
