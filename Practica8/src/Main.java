@@ -1,56 +1,36 @@
-import Equipo2;
-import Jugador;
-import Torneo;
+//Barrera Rodriguez Andres 
+//Grupo 541
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
-        //1 torneo, 5 equipos y 10 jugadores en cada equipo
-        torneo = Torneo("American Athletic Tournament", "National");
+        Torneo t = new Torneo(
+            
+        CapturaDeEntradas.capturarString("Nombre del torneo"),
+        CapturaDeEntradas.capturarString("Region"),
+        CapturaDeEntradas.capturarEntero("Cantidad de equipos participantes"),
+        CapturaDeEntradas.capturarEntero("Cantidad de partidos jugados"),
+        CapturaDeEntradas.capturarEntero("Cantidad de partidos por jugar"));
+        
+        System.out.println("\n------Informacion sobre el torneo------");
+        System.out.println("Nombre: " + t.getNombre());
+        System.out.println("Region: " + t.getRegion());
+        System.out.println("Numero de equipos participantes: " + t.getNumeroEquiposParticipantes());
+        System.out.println("Partidos jugados: " + t.getPartidosJugados());
+        System.out.println("Partidos pendientes: " + t.getPartidosPendientes());
+        
+        System.out.println("\n------Informacion sobre los equipos------");
+        for(int i=0; i<t.getNumeroEquiposParticipantes(); i++){
+            System.out.println("Equipo: " + t.getNombreEquipo(i));
+            System.out.println("Division: " + t.getDivision(i));
+            System.out.println("Puntos anotados: " + t.getPuntosEquipos(i));
+            System.out.println("Cantidad de jugadores: " + t.getNumeroJugadores(i));
+            System.out.println("Jugadores:\n");
 
-        //nombre, division, entrenador
-        Equipo1 = Equipo("Atlanta Hawks", 1, "Nate McMillan");
-        Equipo2 = Equipo("Boston Celtics", 1, "Ime Udoka"); 
-        Equipo3 = Equipo("Brooklyn Nets", 1, "Steve Nash");
-        Equipo4 = Equipo("LA Clippers", 1, "Tyronn Lue");
-
-        //numeroUniforme, nombre, estatura
-        Jugador1 = Jugador(1, "Jeremy Lin", 2.29);
-        Jugador2 = Jugador(2, "Shawn Bradley", 2.22);
-        Jugador3 = Jugador(3, "Yao Ming", 2.23);
-        Jugador4 = Jugador(4, "Chuck Nevitt", 2.25);
-        Jugador5 = Jugador(5, "Pavel Podkolzin", 2.21);
-        Jugador6 = Jugador(6, "Sim Bhullar", 2.19);
-        Jugador7 = Jugador(7, "Mark Easton", 2.16);
-        Jugador8 = Jugador(8, "Rik Smits", 2.22);
-        Jugador9 = Jugador(9, "Ralph Sampson", 2.23);
-        Jugador10 = Jugador(10, "Priest Lauderdale", 2.24);
-
-        Jugador1.puntosAnotados = 2;
-        Jugador2.puntosAnotados = 3;
-        Jugador3.puntosAnotados = 10;
-        Jugador4.puntosAnotados = 3;
-        Jugador5.puntosAnotados = 5;
-        Jugador6.puntosAnotados = 8;
-        Jugador7.puntosAnotados = 9;
-        Jugador8.puntosAnotados = 11;
-        Jugador9.puntosAnotados = 2;
-        Jugador10.puntosAnotados = 5;
-
-        Equipo1.agregarJugador(Jugador1);
-        Equipo2.agregarJugador(Jugador2);
-        Equipo3.agregarJugador(Jugador3);
-        Equipo4.agregarJugador(Jugador4);
-        Equipo5.agregarJugador(Jugador5);
-        Equipo6.agregarJugador(Jugador6);
-        Equipo7.agregarJugador(Jugador7);
-        Equipo8.agregarJugador(Jugador8);
-        Equipo9.agregarJugador(Jugador9);
-        Equipo10.agregarJugador(Jugador10);
-
-        torneo.agregarEquipo(Equipo1);
-        torneo.agregarEquipo(Equipo2);
-        torneo.agregarEquipo(Equipo3);
-        torneo.agregarEquipo(Equipo4);
-    }
+            for(int j=0; j<t.getNumeroEquiposParticipantes(); j++){
+                System.out.println("Nombre: " + t.getNombreJugador(i, j));
+                System.out.println("Numero: "+ t.getNumeroUniforme(i, j));
+            }
+        }
+    }    
 }
