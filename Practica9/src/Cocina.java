@@ -2,7 +2,7 @@ import Robots.MiniRobotCenas;
 import Robots.MiniRobotComidas;
 import Robots.MiniRobotCuchillos;
 import Robots.MiniRobotDesayunos;
-import Robots.MiniRobotServido;
+import Robots.MiniRobotServir;
 import Robots.Robot;
 
 public class Cocina{
@@ -20,7 +20,7 @@ public class Cocina{
         Bots[1] = new MiniRobotDesayunos();
         Bots[2] = new MiniRobotComidas();
         Bots[3] = new MiniRobotCenas();
-        Bots[4] = new MiniRobotServido();
+        Bots[4] = new MiniRobotServir();
         Bots[5] = new MagnumOpus();
 
         setAccionCorrecta(1);
@@ -47,7 +47,7 @@ public class Cocina{
         infoBots();
         
 
-        System.out.println("Empezaremos a cocinar. \nRecordar que el orden de pasos es importante!\n");
+        System.out.println("Empezaremos a cocinar.\n");
         System.out.println("1)Cortar los ingredientes");
         System.out.println("2)Cocinar la comida");
         System.out.println("3)Servir la comida");
@@ -56,7 +56,8 @@ public class Cocina{
             accionActual = CapturaDeEntradas.capturarEntero("Selecciona el paso");
             botActual = CapturaDeEntradas.capturarEntero("Selecciona el robot que quieres que realice la tarea");
             acciones[accionCorrecta-1] = Bots[botActual].accion(listaDeAcciones[accionActual-1]);
-            
+
+            //seleccionar al bot con el indice de robots, y restar la bateria de ese robot
             Bots[botActual].restarBateria();
             
             if (accionCorrecta == 2){
@@ -88,7 +89,7 @@ public class Cocina{
 
         accionCorrecta++;
 
-        }while(salida && accionCorrecta<=3);
+        }while(accionCorrecta<=3 && salida);
         
         if(salida){
             System.out.println("¡Hurra! El plato estaba delicioso");
@@ -132,6 +133,7 @@ public class Cocina{
         System.out.println("\nEstos son los Bots disponibles por el momento");
 
         for(int i=0; i<6; i++){
+            //pasar por cada indice de los bots e imprimir cada uno
             Bots[i].imprimeBot();
         }
     }

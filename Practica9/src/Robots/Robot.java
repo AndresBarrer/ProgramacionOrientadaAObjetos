@@ -1,40 +1,44 @@
 package Robots;
+
 public abstract class Robot {
 
     public float bateria;
-    public String nombre, ultimaaccion;
+    public String nombre, ultimaAccion;
     public int identificador;
 
     public Robot(float bateria, String nombre, int identificador){
         setBateria(bateria);
         setNombre(nombre);
         setIdentificador(identificador);
-        setUltimaaccion("Aun no ha realizado ninguna accion");
+        setUltimaAccion("Aun no ha realizado ninguna accion");
     }
+    
+    public abstract void restarBateria(); //cada robot tendra un nivel diferente de bateria en que se gasta
+    public abstract int accion(String x);
 
-    public void setBateria(float a) {
-        this.bateria = a;
+    public void setBateria(float bateria) {
+        this.bateria = bateria;
     }
     private float getBateria() {
         return this.bateria;
     }
 
-    private void setNombre(String a) {
-        this.nombre = a;
+    private void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     private String getNombre() {
         return this.nombre;
     }
 
-    public void setUltimaaccion(String a) {
-        this.ultimaaccion = a;
+    public void setUltimaAccion(String ultimaAccion) {
+        this.ultimaAccion = ultimaAccion;
     }
-    private String getUltimaaccion() {
-        return this.ultimaaccion;
+    private String getUltimaAccion() {
+        return this.ultimaAccion;
     }
 
-    private void setIdentificador(int a) {
-        this.identificador = a;
+    private void setIdentificador(int identificador) {
+        this.identificador = identificador;
     }
     private int getIdentificador() {
         return this.identificador;
@@ -43,12 +47,10 @@ public abstract class Robot {
     public void imprimeBot(){
         System.out.println("Identificador: " + getIdentificador());
         System.out.println("Nombre: " + getNombre());
-        System.out.println("Ultima accion realizada por el robot: " + getUltimaaccion());
+        System.out.println("Ultima accion realizada por el robot: " + getUltimaAccion());
         System.out.println("Bateria restante: " + getBateria());
         System.out.println("\n");
     }
 
-    //Para implementar el abstract hare que cada robot posea un distinto nivel de gasto debateria
-    public abstract void restarBateria();
-    public abstract int accion(String a);
+
 }

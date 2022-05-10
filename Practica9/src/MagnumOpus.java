@@ -13,8 +13,10 @@ public class MagnumOpus extends Robot{
     }
 
     @Override
-    public int accion(String accionrealizada){
-        setUltimaaccion(accionrealizada);
-        return 10; //Ya que el magnus opus puede hacer todo tendra el codigo especial 10
+    public int accion(String accionRealizada){
+        setUltimaAccion(accionRealizada);
+        
+        //codigo especial
+        return 1000; 
     }
 }

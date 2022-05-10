@@ -12,12 +12,14 @@ public class MiniRobotDesayunos extends Robot implements MiniRobots {
     
     @Override
     public int accion(String accionRealizada){
-        setUltimaaccion(accionRealizada);
-        return 2; //Este return es de la accion que el robot deberia de hacer
+        setUltimaAccion(accionRealizada);
+        //Accion que el robot tiene que hacer
+        return 2; 
     }
 
     @Override
     public int especialidad(){
-        return 1; //1 para desayunos
+        //1 para desayunos
+        return 1;
     }
 }

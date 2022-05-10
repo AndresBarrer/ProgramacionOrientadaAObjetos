@@ -1,4 +1,5 @@
 package Robots;
+
 public class MiniRobotCenas extends Robot implements MiniRobots{
 
     public MiniRobotCenas(){
@@ -11,14 +12,16 @@ public class MiniRobotCenas extends Robot implements MiniRobots{
     }
     
     @Override
-    public int accion(String accionrealizada){
-        setUltimaaccion(accionrealizada);
-        return 2; //Este return es de la accion que el robot deberia de hacer
+    public int accion(String accionRealizada){
+        setUltimaAccion(accionRealizada);
+        //La accion que el robot tiene que hacer
+        return 2;
     }
     
     @Override
     public int especialidad(){    
-        return 3; //3 para cenas
+        //3 para cenas
+        return 3;
     }
 }
    

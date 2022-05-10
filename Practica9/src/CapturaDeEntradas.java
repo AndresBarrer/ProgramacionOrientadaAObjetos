@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class CapturaDeEntradas {
     public static String capturarString(String captura){
         Scanner scan = new Scanner(System.in);

@@ -11,8 +11,9 @@ public class MiniRobotCuchillos extends Robot{
     }
     
     @Override
-    public int accion(String accionrealizada){
-        setUltimaaccion(accionrealizada);
-        return 1; //Este return es de la accion que el robot deberia de hacer
+    public int accion(String accionRealizada){
+        setUltimaAccion(accionRealizada);
+        //Accion que debe realizar 
+        return 1; 
     }
 }
