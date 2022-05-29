@@ -12,7 +12,7 @@ public class Escribir{
             writer.write(string);
             writer.write(System.getProperty("line.separator"));
             writer.close();
-            
+
         }catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

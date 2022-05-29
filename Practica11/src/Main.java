@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args){
 
@@ -6,14 +8,18 @@ public class Main {
         Alumno alumno2 = new Alumno("Isabella Real", 1250043);
         Alumno alumno3 = new Alumno("Miguel Barrera", 1250494);
 
-        String path = "C:/Users/Admin/Documents/GitHub/ProgramacionOrientadaAObjetos/Practica11/src/practica11.csv";
-        alumno1.asignarCalificaciones(Leer.LeerCSV(path));
-        alumno2.asignarCalificaciones(Leer.LeerCSV(path));
-        alumno3.asignarCalificaciones(Leer.LeerCSV(path)); 
+        ArrayList<Alumno> alumnos = new ArrayList<Alumno>();
+        alumnos.add(alumno1);
+        alumnos.add(alumno2);
+        alumnos.add(alumno3);
 
-        //alumno1.printPromedioCalificaciones();
-        alumno1.escribirAlumno();
-        alumno2.escribirAlumno();
-        alumno3.escribirAlumno();
+
+        String path = "C:/Users/Admin/Documents/GitHub/ProgramacionOrientadaAObjetos/Practica11/src/practica11.csv";
+        
+        for(Alumno alumno: alumnos){
+            alumno.asignarCalificaciones(Leer.LeerCSV(path));
+            alumno.escribirAlumno();
+        }
+        System.out.println("Se ha generado un archivo con la informacion.");
     }
 }

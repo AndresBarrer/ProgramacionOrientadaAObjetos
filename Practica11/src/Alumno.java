@@ -1,5 +1,3 @@
-import java.io.File;
-
 public class Alumno {
 
     String nombre;
@@ -73,15 +71,21 @@ public class Alumno {
     }
 
     public void escribirAlumno(){
-        
         Escribir.EscribirTxt("Nombre: "+ getNombre());
+        System.out.println("Nombre: " + getNombre());
+
         Escribir.EscribirTxt("Matricula: "+ Integer.toString(getMatricula()));
+        System.out.println("Matricula: " + getMatricula());
+
+        Escribir.EscribirTxt("Calificaciones:");
+        System.out.println("Calificaciones:");
+        for(int i=0; i<7; i++){
+            System.out.println(calificaciones[i]);
+            Escribir.EscribirTxt(Float.toString(calificaciones[i]));
+        }
+        System.out.println("Promedio General: " + getPromedioGeneral());
         Escribir.EscribirTxt("Promedio General: "+ Float.toString(getPromedioGeneral()));
+        System.out.println("\n");
         Escribir.EscribirTxt("\n");
-
-
-        //Escribir.EscribirTxt(file, Integer.toString(getMatricula()));
-
-        //use returned value of promedio to be able to print
     }
 }

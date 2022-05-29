@@ -1,15 +1,39 @@
 Nombre: Andres Barrera
 Matricula: 1280040
-Promedio General: 89.14286
+Calificaciones:
+87.0
+69.0
+99.0
+100.0
+81.0
+81.0
+91.0
+Promedio General: 86.85714
 
 
 Nombre: Isabella Real
 Matricula: 1250043
-Promedio General: 87.42857
+Calificaciones:
+91.0
+58.0
+74.0
+58.0
+86.0
+74.0
+67.0
+Promedio General: 72.57143
 
 
 Nombre: Miguel Barrera
 Matricula: 1250494
-Promedio General: 80.0
+Calificaciones:
+67.0
+99.0
+99.0
+99.0
+66.0
+74.0
+99.0
+Promedio General: 86.14286
 
 

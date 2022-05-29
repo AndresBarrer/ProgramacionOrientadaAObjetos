@@ -38,8 +38,6 @@ public class Leer {
                     //calificacionesTotales[i] =  StringToFloat.convertirStringToFloat(tempArray[i]);
                     calificacionesTotales[i] =  StringToFloat.convertirStringToFloat(tempArray[rand.nextInt(21)]);
                 }
-                
-                //calificacionesTotales.add(convertirStringToFloat(tempArray[1])); //TODO: GENERATE RANDOM CALIFIFACION FROM LIST
             }
             br.close();
             return calificacionesTotales;
