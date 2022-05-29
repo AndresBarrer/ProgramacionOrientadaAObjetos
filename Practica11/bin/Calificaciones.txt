@@ -1,0 +1,15 @@
+Nombre: Andres Barrera
+Matricula: 1280040
+Promedio General: 89.14286
+
+
+Nombre: Isabella Real
+Matricula: 1250043
+Promedio General: 87.42857
+
+
+Nombre: Miguel Barrera
+Matricula: 1250494
+Promedio General: 80.0
+
+

@@ -83,7 +83,7 @@ public class SistemaBancario{
 
                                 //while loop para seguir dentro de las opciones de cuenta
                                 while(!exitOpcionesDeCuenta){
-
+                                    
                                     //imprimir menu de opciones de cuenta y preguntar a donde quiere ir
                                     printOpcionesDeCuenta();
                                     int opcionDeCuenta = scan.nextInt();
