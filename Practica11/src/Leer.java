@@ -9,10 +9,9 @@ public class Leer {
     static String delimiter = ",";
 
     public static float[] LeerCSV(String csvFile){
-        //ArrayList<Float> calificacionesTotales = new ArrayList<Float>();
+        
         float calificacionesTotales[] =  new float[7];
         try{
-            //float calificacionesTotales[];
             
             File file = new File(csvFile); //crea un objeto de tipo File
             FileReader fr = new FileReader(file); //crear un FileReader que lea desde el objeto
@@ -34,8 +33,6 @@ public class Leer {
 
 
                 for(int i=0; i<7; i++){
-                    //System.out.println("");
-                    //calificacionesTotales[i] =  StringToFloat.convertirStringToFloat(tempArray[i]);
                     calificacionesTotales[i] =  StringToFloat.convertirStringToFloat(tempArray[rand.nextInt(21)]);
                 }
             }
